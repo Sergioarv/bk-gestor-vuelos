@@ -1,0 +1,222 @@
+{
+	"info": {
+		"_postman_id": "3e1c46be-e66b-407e-992c-b82a715b1912",
+		"name": "GestionVuelos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Obtener Aerolineas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/aerolinea",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"aerolinea"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Rutas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/ruta",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ruta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Vuelos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/vuelo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vuelo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Guardar un Vuelo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idVuelo\": 6,\r\n    \"fecha_vuelo\": \"2021-11-10\",\r\n    \"aerolinea_idAerolinea\": {\r\n        \"id_aerolinea\": 2\r\n    },\r\n    \"ruta_idRuta\": {\r\n        \"idRuta\": 4\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/vuelo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vuelo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar un Vuelo",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idVuelo\": 4,\r\n    \"fecha_vuelo\": \"2021-11-11\",\r\n    \"aerolinea_idAerolinea\": {\r\n        \"id_aerolinea\": 1\r\n    },\r\n    \"ruta_idRuta\": {\r\n        \"idRuta\": 1\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/vuelo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vuelo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar un Vuelo",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idVuelo\": 4\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/vuelo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vuelo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Vuelos Por Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/vuelo/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vuelo",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Vuelos Por Fecha",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/vuelo/FechaVuelo?fechaVuelo=2021-11-10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vuelo",
+						"FechaVuelo"
+					],
+					"query": [
+						{
+							"key": "fechaVuelo",
+							"value": "2021-11-10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Vuelos Por Ruta",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/vuelo/Ruta?idRuta=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vuelo",
+						"Ruta"
+					],
+					"query": [
+						{
+							"key": "idRuta",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

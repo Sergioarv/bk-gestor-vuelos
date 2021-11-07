@@ -1,6 +1,5 @@
 package co.com.sergio.bk.gestor.vuelos.controller;
 
-import co.com.sergio.bk.gestor.vuelos.entity.Aerolinea;
 import co.com.sergio.bk.gestor.vuelos.entity.Ruta;
 import co.com.sergio.bk.gestor.vuelos.service.RutaService;
 import org.springframework.beans.factory.annotation.Autowired;

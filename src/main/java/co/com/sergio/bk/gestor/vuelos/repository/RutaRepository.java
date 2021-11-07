@@ -2,7 +2,6 @@ package co.com.sergio.bk.gestor.vuelos.repository;
 
 import co.com.sergio.bk.gestor.vuelos.entity.Ruta;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 /**

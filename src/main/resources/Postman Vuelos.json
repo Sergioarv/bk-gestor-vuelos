@@ -69,7 +69,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"idVuelo\": 6,\r\n    \"fecha_vuelo\": \"2021-11-10\",\r\n    \"aerolinea_idAerolinea\": {\r\n        \"id_aerolinea\": 2\r\n    },\r\n    \"ruta_idRuta\": {\r\n        \"idRuta\": 4\r\n    }\r\n}",
+					"raw": "{\r\n    \"fecha_vuelo\": \"2021-11-10\",\r\n    \"aerolinea_idAerolinea\": {\r\n        \"id_aerolinea\": 2\r\n    },\r\n    \"ruta_idRuta\": {\r\n        \"idRuta\": 4\r\n    }\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -97,7 +97,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"idVuelo\": 4,\r\n    \"fecha_vuelo\": \"2021-11-11\",\r\n    \"aerolinea_idAerolinea\": {\r\n        \"id_aerolinea\": 1\r\n    },\r\n    \"ruta_idRuta\": {\r\n        \"idRuta\": 1\r\n    }\r\n}",
+					"raw": "{\r\n    \"idVuelo\": 6,\r\n    \"fecha_vuelo\": \"2021-11-11\",\r\n    \"aerolinea_idAerolinea\": {\r\n        \"id_aerolinea\": 1\r\n    },\r\n    \"ruta_idRuta\": {\r\n        \"idRuta\": 1\r\n    }\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -125,7 +125,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"idVuelo\": 4\r\n}",
+					"raw": "{\r\n    \"idVuelo\": 2\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -172,7 +172,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/vuelo/FechaVuelo?fechaVuelo=2021-11-10",
+					"raw": "http://localhost:8080/vuelo/FechaVuelo?fechaVuelo=2021-11-05",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -185,7 +185,7 @@
 					"query": [
 						{
 							"key": "fechaVuelo",
-							"value": "2021-11-10"
+							"value": "2021-11-05"
 						}
 					]
 				}
@@ -198,7 +198,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/vuelo/Ruta?idRuta=2",
+					"raw": "http://localhost:8080/vuelo/Ruta?idRuta=6",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -211,7 +211,7 @@
 					"query": [
 						{
 							"key": "idRuta",
-							"value": "2"
+							"value": "6"
 						}
 					]
 				}

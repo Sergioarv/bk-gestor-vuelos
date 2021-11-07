@@ -1,6 +1,6 @@
 package co.com.sergio.bk.gestor.vuelos.service;
 
-import co.com.sergio.bk.gestor.vuelos.entity.*;
+import co.com.sergio.bk.gestor.vuelos.entity.Ruta;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 

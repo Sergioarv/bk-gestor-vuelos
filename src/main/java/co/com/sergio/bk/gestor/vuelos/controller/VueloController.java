@@ -1,6 +1,6 @@
 package co.com.sergio.bk.gestor.vuelos.controller;
 
-import co.com.sergio.bk.gestor.vuelos.entity.*;
+import co.com.sergio.bk.gestor.vuelos.entity.Vuelo;
 import co.com.sergio.bk.gestor.vuelos.service.VueloService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;

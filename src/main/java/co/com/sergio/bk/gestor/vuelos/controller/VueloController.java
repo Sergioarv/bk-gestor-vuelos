@@ -20,6 +20,7 @@ import java.util.Optional;
  **/
 @RestController
 @RequestMapping("/vuelo")
+@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT, RequestMethod.DELETE})
 public class VueloController {
 
     @Autowired
@@ -94,6 +95,34 @@ public class VueloController {
         HttpStatus status = null;
 
         data = vueloService.findByFecha(fecha);
+        if(data != null){
+            status = HttpStatus.OK;
+        }else{
+            status = HttpStatus.BAD_REQUEST;
+        }
+
+        return new ResponseEntity<>(data, status);
+    }
+
+    /**
+     * Método encargado de filtrar segun los parametros de busqueda
+     *
+     * @Author Sergio Abelardo Rodríguez Vásquez
+     * @Email ingsergiorodriguezv@gmail.com
+     * @Date 13/11/2021 17:51
+     *
+     * @Param [fecha, idRuta, conector] parametos permitidos como busqueda
+     * @return
+     *
+    **/
+    @GetMapping("/filterVuelos")
+    public ResponseEntity<?> filterVuelos(@RequestParam(value = "fechaVuelo", required = false) @DateTimeFormat(pattern="yyyy-MM-dd") Date fecha,
+                                          @RequestParam(value = "idRuta", required = false) String idRuta,
+                                          @RequestParam(value = "conector", required = false) String conector){
+        List<Vuelo> data = null;
+        HttpStatus status = null;
+
+        data = vueloService.filterVuelos(fecha, idRuta, conector);
         if(data != null){
             status = HttpStatus.OK;
         }else{

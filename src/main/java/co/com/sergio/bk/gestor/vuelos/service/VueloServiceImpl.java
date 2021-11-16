@@ -45,7 +45,7 @@ public class VueloServiceImpl implements VueloService {
     @Override
     @Transactional
     public Vuelo save(Vuelo vuelo) {
-        if(vuelo.getIdVuelo() == 0 ){
+        if (vuelo.getIdVuelo() == 0) {
             return null;
         }
 
@@ -62,13 +62,54 @@ public class VueloServiceImpl implements VueloService {
 
     @Override
     @Transactional(readOnly = true)
-    public List<Vuelo> findByFecha(Date fecha){
+    public List<Vuelo> findByFecha(Date fecha) {
         return vueloRepository.findByFecha(fecha);
     }
 
     @Override
     @Transactional(readOnly = true)
-    public List<Vuelo> findByRuta(String idRuta){
+    public List<Vuelo> filterVuelos(Date fecha, String idRuta, String conector) {
+
+        List<Vuelo> listResult = null;
+        if (fecha != null && idRuta != null) {
+            if (conector != null) {
+                System.out.println("Funciono");
+                switch (conector) {
+                    case "AND":
+                        listResult = vueloRepository.findByFechaAndRuta(fecha, idRuta);
+                        break;
+                    case "OR":
+                        listResult = vueloRepository.findByFechaOrRuta(fecha, idRuta);
+                        break;
+                }
+            } else {
+                System.out.println("Error de datos");
+                return listResult;
+            }
+        }else if(fecha != null){
+            listResult = vueloRepository.findByFecha(fecha);
+        } else if(idRuta != null){
+            listResult = vueloRepository.findByRuta(idRuta);
+        } else {
+            listResult = vueloRepository.findAll();
+        }
+
+        return listResult;
+    }
+
+    @Override
+    public List<Vuelo> findByFechaAndRuta(Date fecha, String idRuta) {
+        return vueloRepository.findByFechaAndRuta(fecha, idRuta);
+    }
+
+    @Override
+    public List<Vuelo> findByFechaOrRuta(Date fecha, String idRuta) {
+        return vueloRepository.findByFechaOrRuta(fecha, idRuta);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public List<Vuelo> findByRuta(String idRuta) {
         return vueloRepository.findByRuta(idRuta);
     }
 
@@ -77,7 +118,7 @@ public class VueloServiceImpl implements VueloService {
     public Vuelo updateVuelo(Vuelo vuelo) {
 
         Vuelo aux = vueloRepository.findById(vuelo.getIdVuelo()).orElse(null);
-        if(aux == null){
+        if (aux == null) {
             return aux;
         }
         return vueloRepository.save(vuelo);

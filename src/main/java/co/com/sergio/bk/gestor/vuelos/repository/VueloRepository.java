@@ -22,4 +22,10 @@ public interface VueloRepository extends JpaRepository<Vuelo, Integer> {
 
     @Query(value = "select * from Vuelo v where v.Ruta_idRuta = :idRuta", nativeQuery = true)
     public List<Vuelo> findByRuta(String idRuta);
+
+    @Query(value = "select * from Vuelo v where v.Ruta_idRuta = :idRuta union select * from Vuelo v where v.Fecha_Vuelo= DATE_FORMAT(:fecha, \"%Y-%m-%d\")", nativeQuery = true)
+    public List<Vuelo> findByFechaOrRuta(Date fecha, String idRuta);
+
+    @Query(value = "select t1.idVuelo, t1.Fecha_Vuelo, t1.Aerolinea_idAerolinea, t1.Ruta_idRuta from (select * from Vuelo v where v.Fecha_Vuelo = DATE_FORMAT(:fecha,\"%Y-%m-%d\")) t1 inner join (select * from Vuelo v where v.Ruta_idRuta = :idRuta) t2 on t1.idVuelo = t2.idVuelo", nativeQuery = true)
+    public List<Vuelo> findByFechaAndRuta(Date fecha, String idRuta);
 }

@@ -41,6 +41,10 @@ public class Ruta implements Serializable {
         this.origen = origen;
     }
 
+    public Ciudad getDestino() {
+        return destino;
+    }
+
     public void setDestino(Ciudad destino) {
         this.destino = destino;
     }

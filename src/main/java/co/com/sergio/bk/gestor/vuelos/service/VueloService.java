@@ -28,6 +28,12 @@ public interface VueloService{
 
     List<Vuelo> findByFecha(Date Fecha);
 
+    List<Vuelo> filterVuelos(Date fecha, String idRuta, String conector);
+
+    List<Vuelo> findByFechaAndRuta(Date fecha, String idRuta);
+
+    List<Vuelo> findByFechaOrRuta(Date fecha, String idRuta);
+
     List<Vuelo> findByRuta(String idRuta);
 
     public Vuelo updateVuelo(Vuelo vuelo);

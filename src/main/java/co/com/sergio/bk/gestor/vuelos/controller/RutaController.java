@@ -5,6 +5,7 @@ import co.com.sergio.bk.gestor.vuelos.service.RutaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,6 +20,7 @@ import java.util.List;
  **/
 @RestController
 @RequestMapping("/ruta")
+@CrossOrigin("*")
 public class RutaController {
 
     @Autowired
@@ -29,7 +31,7 @@ public class RutaController {
         List<Ruta> data = null;
         HttpStatus status = null;
 
-        data = (List<Ruta>) rutaService.findAll();
+        data = (List<Ruta>) rutaService.getRuta();
         if(data != null){
             status = HttpStatus.OK;
         }else{
